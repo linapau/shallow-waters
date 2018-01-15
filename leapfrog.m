@@ -13,7 +13,7 @@ jmax=120; % extent in y direction
 itop(1:80)=ones(1,80)*imax; 
 itop(81:121)=ones(1,41)*120;
 
-H = 50; % undisturbed thickness of layer
+H = 50; % undisturbed thickness of the layer
 gred = 9.8 * 2/1000; % reduced gravity
 
 for j=1:jmax;

@@ -13,7 +13,7 @@ jmax=120; % extent in y direction
 itope(1:80)=ones(1,80)*imax;
 itope(81:121)=ones(1,41)*120;
 
-H = 50; % undisturbed thickness of layer
+H = 50; % undisturbed thickness of the layer
 gred = 9.8 * 2/1000; % reduced gravity
 
 
@@ -22,7 +22,7 @@ ufg = zeros(imax+1, jmax);
 vfg = zeros(imax,   jmax+1);
 
 
-% first guess for intant t+1
+% first guess for instant t+1
 
 for j=1:jmax;
 for i=2:itope(j)
@@ -46,7 +46,7 @@ end
 
 
 % second approximation using first guess to evaluate the operator of the 
-% diferential equations
+% differential equations
 
 for j=1:jmax;
 for i=2:itope(j)

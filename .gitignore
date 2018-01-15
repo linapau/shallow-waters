@@ -1,1 +1,13 @@
 *.png
+Thumbs.db
+contourBoyd.m
+estabilidad.m
+figuras.m
+h.mat
+hLeapf10.mat
+h_tmax.fig
+leapfrogSinDy.m
+u.mat
+uLeapf10.mat
+v.mat
+vLeapf10.mat

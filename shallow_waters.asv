@@ -6,7 +6,7 @@ clear all
 % The Seasonal Upwelling in the Gulf of Guinea Due to Remote Forcing
 % Journal of Physical Oceanography, Vol. 8, 1050-1060
 % 1978
-% by Davic Adamec and James J. O'Brien
+% by David Adamec and James J. O'Brien
 %
 % for the course Numerical Modeling of the Atmosphere of the bachelor in
 % Atmospheric Sciences - University of the Republic (Uruguay).
@@ -14,14 +14,15 @@ clear all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % It consists of a linear model on an equatorial beta plane integrated over
-% a 100-days period in a basin tha approximates the tropical Atlantic
+% a 100-days period in a basin that approximates the tropical Atlantic
 % Ocean.
 %
 % The motion is described by the shallow water equations, discretized in a
 % staggered grid in space (type C). For the time derivative a leapfrog 
-% scheme (leapfrog.m) is considered. Each 30 iterations,  order to reduce 
-% the computational mode, the Matsuno scheme (matsuno.m) is used. Figures
-% ares made to show the results.
+% scheme (leapfrog.m) is considered. Every 30 iterations, the Matsuno 
+% scheme (matsuno.m) is used. 
+%
+%Figuresare made to show the results.
 %
 % A stability analysis is made
 %
@@ -39,7 +40,7 @@ dx = 25*10^3; % grid resolution of 25 km in x direction
 dy = 25*10^3; % grid resolution of 25 km in y direction
 dt = 3600*1; % time step of 1 hour
 
-h = zeros(n,   m,   t); % local height field chage from undisturbed depht
+h = zeros(n,   m,   t); % local height field change from undisturbed depth in a layer
 u = zeros(n+1, m,   t); % x directed component of velocity
 v = zeros(n,   m+1, t); % y directed component of velocity
 
@@ -48,7 +49,7 @@ v = zeros(n,   m+1, t); % y directed component of velocity
 Tau = zeros(n+1, m); % wind stress
 
 % x dependence of wind stress
-Tau(1:60, :) = -0.025; % constant in the west coast
+Tau(1:60, :) = -0.025; % constant on the west coast
 
 for i = 61:90
     Tau(i, :) = ( sin( (i-60)*pi/(30*2) )^2 - 1 ) * 0.025;
@@ -160,14 +161,14 @@ caxis([-0.5 0.3])
 
 %% 3) Maximum and minimum values of h
 
-min_d10 = min(min(h(:,:,240))); % minimum value of h day 10
-max_d10 = max(max(h(:,:,240))); % maximum value of h day 10
+min_d10 = min(min(h(:,:,240))); % the minimum value of h day 10
+max_d10 = max(max(h(:,:,240))); % the maximum value of h day 10
 
-min_d50 = min(min(h(:,:,1200))); % minimum value of h day 50
-max_d50 = max(max(h(:,:,1200))); % maximum value of h day 10
+min_d50 = min(min(h(:,:,1200))); % the minimum value of h day 50
+max_d50 = max(max(h(:,:,1200))); % the maximum value of h day 10
 
-min_d100 = min(min(h(:,:,2400))); % minimum value of h day 100
-max_d100 = max(max(h(:,:,2400))); % % maximum value of h day 100
+min_d100 = min(min(h(:,:,2400))); % the minimum value of h day 100
+max_d100 = max(max(h(:,:,2400))); % % the maximum value of h day 100
 
 
 %% 4) Stability analysis of the leapfrog scheme
@@ -176,7 +177,7 @@ max_d100 = max(max(h(:,:,2400))); % % maximum value of h day 100
 d = 50000;
 y = 0; % y can be zero or the -1500*1e3 (southern boundary)
 f = beta*y; % Coriolis parameter
-H = 50; % undisturbed thickness of layer
+H = 50; % undisturbed thickness of the layer
 g = 9.8*0.001; % reduced gravity
 vel_ref = sqrt(9.8*0.001*H); % speed of the reference wave 
 
