@@ -2,10 +2,8 @@
 
 PURPOSE: Replicate the results obtained in:
 
-The Seasonal Upwelling in the Gulf of Guinea Due to Remote Forcing
-Journal of Physical Oceanography, Vol. 8, 1050-1060
-1978
-by David Adamec and James J. O'Brien
+David Adamec and James J. O'Brien (1978). The Seasonal Upwelling in the Gulf of Guinea Due to Remote Forcing
+Journal of Physical Oceanography, Vol. 8, 1050-1060.
 
 for the course Numerical Modeling of the Atmosphere of the bachelor in
 Atmospheric Sciences - University of the Republic (Uruguay).
